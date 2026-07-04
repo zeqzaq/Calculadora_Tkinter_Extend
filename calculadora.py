@@ -1,11 +1,12 @@
 import tkinter as tk
 from tkinter import messagebox
 
-class Calculadora:
+#Calculadora basica
+class CalculadoraBasica:
     def __init__(self, root):
         self.root = root
         self.root.title("Calculadora Tkinter")
-        self.root.geometry("640x500")
+        self.root.geometry("500x400")
         self.root.configure(bg="#2E4053")
         self.root.resizable(False, False)
 
@@ -16,7 +17,7 @@ class Calculadora:
             pass
 
         self.estudiante = tk.Label(
-            root, text="Cristian Lema", font=("Arial", 10, "italic"),
+            root, text="Calculadora Basica", font=("Arial", 10, "italic"),
             bg="#2E4053", fg="#F0B27A"
         )
         self.estudiante.pack(pady=(10, 0))
@@ -24,13 +25,11 @@ class Calculadora:
         marco = tk.Frame(root, bg="#2E4053")
         marco.pack(pady=20)
 
-        tk.Label(marco, text="Número 1:", font=("Arial", 11),
-                 bg="#2E4053", fg="white").grid(row=0, column=0, padx=5, pady=5, sticky="e")
+        tk.Label(marco, text="Número 1:", font=("Arial", 11),bg="#2E4053", fg="white").grid(row=0, column=0, padx=5, pady=5, sticky="e")
         self.num1 = tk.Entry(marco, font=("Arial", 11), width=15)
         self.num1.grid(row=0, column=1, padx=5, pady=5)
 
-        tk.Label(marco, text="Número 2:", font=("Arial", 11),
-                 bg="#2E4053", fg="white").grid(row=1, column=0, padx=5, pady=5, sticky="e")
+        tk.Label(marco, text="Número 2:", font=("Arial", 11),bg="#2E4053", fg="white").grid(row=1, column=0, padx=5, pady=5, sticky="e")
         self.num2 = tk.Entry(marco, font=("Arial", 11), width=15)
         self.num2.grid(row=1, column=1, padx=5, pady=5)
 
@@ -100,9 +99,3 @@ class Calculadora:
 
     def mostrar_resultado(self, texto):
         self.resultado.config(text=texto)
-
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = Calculadora(root)
-    root.mainloop()
